@@ -85,4 +85,6 @@
 
 6. 最后，向上游仓库中的 `dev/*` 分支发起一个 pull request 请求，我们将对其进行认真的审查，该仓库中至少会包含一个 `dev/${version}` 的分支。
 
+7. 发版流程，在当前 `dev/*` 分支拉下最新的主分支 `maste`，对于一个版本号 `major.minor.patch`，使用 `npm version [patch | minor | major] 'commit message'` 分别对其各个版本位进行升级，其中 `major` 为主版本号，即含有大的并且可能含有断层的修改，`minor` 为次版本号，反映一些较大的修改，`patch` 为补丁版本，主要是没有巨大断层的小改动。`npm version` 命令执行之后产生一个记录新版本号的 commit，之后使用 rebase merge 合并到主分支 `master`，最后使用 `git tag` 命令对其分支做记录。即完成了一个发布流程。
+
 谢谢您的耐心阅读！并感谢您对 MQTT X 的贡献！:)

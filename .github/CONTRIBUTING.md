@@ -86,4 +86,6 @@ If you find a problem 🐛 or have a better idea 💡 during use, you can modify
 
 6. Submit a pull request to the `dev/*` branch of the upstream repository, and we will review it. The repository will contain at least one `dev/${version}` branch.
 
+7. In the release process, pull down the latest master branch `maste` in the current `dev/*` branch, the version number is `major.minor.patch`, use `npm version [patch | minor | major]'commit message'` Upgrade each of its version bits separately, where `major` is the major version number, including breaking change, `minor` is the minor version number, Version with several changes, and `patch` is Patch version, minor changes(not breaking). After the `npm version` command is executed, it will generate a commit to record the new version number, then use rebase merge to merge into the master branch `master`, and finally use the `git tag` command to record its branch. That is, the publishing process is completed.
+
 Thanks for your reading! Hope enjoying! :)
